@@ -98,7 +98,7 @@ void rainbowFade2White(uint8_t wait, int rainbowLoops, int whiteLoops) {
     
     for(int j=0; j<256; j++) { // 5 cycles of all colors on wheel
 
-      for(int i=0; i< strip.numPixels(); i++) {
+      for(uint16_t i=0; i< strip.numPixels(); i++) {
 
         wheelVal = Wheel(((i * 256 / strip.numPixels()) + j) & 255);
 
@@ -160,8 +160,8 @@ void whiteOverRainbow(uint8_t wait, uint8_t whiteSpeed, uint8_t whiteLength ) {
   
   if(whiteLength >= strip.numPixels()) whiteLength = strip.numPixels() - 1;
 
-  int head = whiteLength - 1;
-  int tail = 0;
+  uint16_t head = whiteLength - 1;
+  uint16_t tail = 0;
 
   int loops = 3;
   int loopNum = 0;
@@ -258,4 +258,3 @@ uint8_t green(uint32_t c) {
 uint8_t blue(uint32_t c) {
   return (c);
 }
-
